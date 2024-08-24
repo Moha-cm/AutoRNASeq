@@ -9,6 +9,7 @@ Follow these steps to set up and run the application:
 
 1. Clone the Repository
 ```git clone https://github.com/Moha-cm/AutoRNASeq.git```
+
 ```cd AutoRNASeq```
 
 3. Install Python Dependencies
