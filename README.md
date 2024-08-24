@@ -38,6 +38,7 @@ After installing all dependencies, you can start the Flask application by runnin
 `python ./app.py`
 
 ### 5. Usage
-Upload Data: Use the UI to upload your raw counts and metadata files.
+
+Upload Data: Use the UI to upload your raw counts and metadata files with the samples columns like files in  the sample data folder.
 Generate Plots: The application will trigger Snakemake workflows and R scripts to process the data and generate plots based on your input.
 Explore Results: Visualize the generated plots and download files directly from the interface.
