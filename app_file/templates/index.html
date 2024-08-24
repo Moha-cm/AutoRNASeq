@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gene Expression Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        function hideUploadBox() {
+            document.querySelector('.upload-box').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="{{ url_for('upload_form') }}">Home</a></li>
+            <li><a href="#">Scatter Plot</a></li>
+            <li><a href="#">Box Plot</a></li>
+            <li><a href="#">Volcano Plot</a></li>
+            <li><a href="#">Upregulated Genes</a></li>
+            <li><a href="#">Downregulated Genes</a></li>
+            <li><a href="#">Survival Plot</a></li>
+        </ul>
+    </div>
+    <div class="upload-container">
+        <div class="upload-box">
+            <div class="logo"></div>
+            <h2>Gene Expression Analysis</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="hideUploadBox()">
+                <div class="input-group">
+                    <label for="rawcounts">Upload rawcounts File</label>
+                    <input type="file" id="rawcounts" name="rawcounts" accept=".csv,.txt" required>
+                </div>
+                <div class="input-group">
+                    <label for="metafile">Upload metadata File</label>
+                    <input type="file" id="metafile" name="metafile" accept=".csv,.txt" required>
+                </div>
+            
+                <button type="submit">Upload</button>
+            </form>
+            
+            {% if files_uploaded %}
+                <p>Select the plots which you are interested in for the analysis.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

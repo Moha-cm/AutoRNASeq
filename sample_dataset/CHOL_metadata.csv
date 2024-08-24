@@ -1,0 +1,45 @@
+﻿project_id,submitter_id,cancer_subtypes,name,barcodes,sample_type,tumor_descriptor,stage,days_to_last_follow_up,age_at_diagnosis,year_of_diagnosis,race,gender,ethnicity,vital_status,age_at_index,days_to_birth,days_to_death,year_of_death,bcr_patient_barcode,tissue_type
+TCGA-CHOL,TCGA-3X-AAV9,NA,Cholangiocarcinoma,TCGA-3X-AAV9-01A-72R-A41I-07,Primary Tumor,Primary,Stage   I,NA,26349,2010,asian,male,not hispanic or latino,Dead,72,-26349,339,2010,TCGA-3X-AAV9,Tumor
+TCGA-CHOL,TCGA-3X-AAVA,NA,Cholangiocarcinoma,TCGA-3X-AAVA-01A-11R-A41I-07,Primary Tumor,Primary,Stage   II,NA,18303,2012,white,female,not hispanic or latino,Dead,50,-18303,445,2013,TCGA-3X-AAVA,Tumor
+TCGA-CHOL,TCGA-3X-AAVB,NA,Cholangiocarcinoma,TCGA-3X-AAVB-01A-31R-A41I-07,Primary Tumor,Primary,Stage   IV,402,25819,2012,white,female,not hispanic or latino,Alive,70,-25819,NA,NA,TCGA-3X-AAVB,Tumor
+TCGA-CHOL,TCGA-3X-AAVC,NA,Cholangiocarcinoma,TCGA-3X-AAVC-01A-21R-A41I-07,Primary Tumor,Primary,Stage   I,709,26493,2012,white,female,not hispanic or latino,Alive,72,-26493,NA,NA,TCGA-3X-AAVC,Tumor
+TCGA-CHOL,TCGA-3X-AAVE,NA,Cholangiocarcinoma,TCGA-3X-AAVE-01A-11R-A41I-07,Primary Tumor,Primary,Stage   II,650,21943,2013,asian,male,not hispanic or latino,Alive,60,-21943,NA,NA,TCGA-3X-AAVE,Tumor
+TCGA-CHOL,TCGA-4G-AAZO,NA,Cholangiocarcinoma,TCGA-4G-AAZO-01A-12R-A41I-07,Primary Tumor,Primary,Stage   II,1177,25989,2012,white,female,not hispanic or latino,Alive,71,-25989,NA,NA,TCGA-4G-AAZO,Tumor
+TCGA-CHOL,TCGA-4G-AAZT,NA,Cholangiocarcinoma,TCGA-4G-AAZT-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,420,22777,2013,white,male,not hispanic or latino,Alive,62,-22777,NA,NA,TCGA-4G-AAZT,Tumor
+TCGA-CHOL,TCGA-W5-AA2G,NA,Cholangiocarcinoma,TCGA-W5-AA2G-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,1976,22933,2008,white,female,not hispanic or latino,Alive,62,-22933,NA,NA,TCGA-W5-AA2G,Tumor
+TCGA-CHOL,TCGA-W5-AA2H,NA,Cholangiocarcinoma,TCGA-W5-AA2H-01A-31R-A41I-07,Primary Tumor,Primary,Stage   III,1077,25775,2012,white,female,not hispanic or latino,Alive,70,-25775,NA,NA,TCGA-W5-AA2H,Tumor
+TCGA-CHOL,TCGA-W5-AA2I,NA,Cholangiocarcinoma,TCGA-W5-AA2I-01A-32R-A41I-07,Primary Tumor,Primary,Stage   I,NA,24388,2005,white,male,not hispanic or latino,Dead,66,-24388,1939,2010,TCGA-W5-AA2I,Tumor
+TCGA-CHOL,TCGA-W5-AA2I,NA,Cholangiocarcinoma,TCGA-W5-AA2I-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   I,NA,24388,2005,white,male,not hispanic or latino,Dead,66,-24388,1939,2010,TCGA-W5-AA2I,Normal
+TCGA-CHOL,TCGA-W5-AA2O,NA,Cholangiocarcinoma,TCGA-W5-AA2O-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,NA,21118,2006,white,male,not hispanic or latino,Dead,57,-21118,640,2007,TCGA-W5-AA2O,Tumor
+TCGA-CHOL,TCGA-W5-AA2Q,NA,Cholangiocarcinoma,TCGA-W5-AA2Q-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   II,50,25069,2006,white,male,not hispanic or latino,Alive,68,-25069,NA,NA,TCGA-W5-AA2Q,Normal
+TCGA-CHOL,TCGA-W5-AA2Q,NA,Cholangiocarcinoma,TCGA-W5-AA2Q-01A-11R-A41I-07,Primary Tumor,Primary,Stage   II,50,25069,2006,white,male,not hispanic or latino,Alive,68,-25069,NA,NA,TCGA-W5-AA2Q,Tumor
+TCGA-CHOL,TCGA-W5-AA2R,NA,Cholangiocarcinoma,TCGA-W5-AA2R-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   I,1542,28367,2006,white,female,not hispanic or latino,Alive,77,-28367,NA,NA,TCGA-W5-AA2R,Normal
+TCGA-CHOL,TCGA-W5-AA2T,NA,Cholangiocarcinoma,TCGA-W5-AA2T-01A-12R-A41I-07,Primary Tumor,Primary,Stage   II,NA,23560,2008,white,female,not hispanic or latino,Dead,64,-23560,1220,2011,TCGA-W5-AA2T,Tumor
+TCGA-CHOL,TCGA-W5-AA2U,NA,Cholangiocarcinoma,TCGA-W5-AA2U-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,NA,28552,2010,white,female,not hispanic or latino,Dead,78,-28552,627,2011,TCGA-W5-AA2U,Tumor
+TCGA-CHOL,TCGA-W5-AA2U,NA,Cholangiocarcinoma,TCGA-W5-AA2U-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   I,NA,28552,2010,white,female,not hispanic or latino,Dead,78,-28552,627,2011,TCGA-W5-AA2U,Normal
+TCGA-CHOL,TCGA-W5-AA2W,NA,Cholangiocarcinoma,TCGA-W5-AA2W-01A-11R-A41I-07,Primary Tumor,Primary,Stage   IV,NA,11438,2010,white,female,not hispanic or latino,Dead,31,-11438,924,2012,TCGA-W5-AA2W,Tumor
+TCGA-CHOL,TCGA-W5-AA2X,NA,Cholangiocarcinoma,TCGA-W5-AA2X-01A-11R-A41I-07,Primary Tumor,Primary,Stage   IV,NA,24797,2010,white,male,not hispanic or latino,Dead,67,-24797,271,2010,TCGA-W5-AA2X,Tumor
+TCGA-CHOL,TCGA-W5-AA2X,NA,Cholangiocarcinoma,TCGA-W5-AA2X-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   IV,NA,24797,2010,white,male,not hispanic or latino,Dead,67,-24797,271,2010,TCGA-W5-AA2X,Normal
+TCGA-CHOL,TCGA-W5-AA2Z,NA,Cholangiocarcinoma,TCGA-W5-AA2Z-01A-11R-A41I-07,Primary Tumor,Primary,Stage   II,1614,10659,2010,white,female,not hispanic or latino,Alive,29,-10659,NA,NA,TCGA-W5-AA2Z,Tumor
+TCGA-CHOL,TCGA-W5-AA30,NA,Cholangiocarcinoma,TCGA-W5-AA30-01A-31R-A41I-07,Primary Tumor,Primary,Stage   I,1153,30039,2010,white,male,not hispanic or latino,Alive,82,-30039,NA,NA,TCGA-W5-AA30,Tumor
+TCGA-CHOL,TCGA-W5-AA30,NA,Cholangiocarcinoma,TCGA-W5-AA30-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   I,1153,30039,2010,white,male,not hispanic or latino,Alive,82,-30039,NA,NA,TCGA-W5-AA30,Normal
+TCGA-CHOL,TCGA-W5-AA31,NA,Cholangiocarcinoma,TCGA-W5-AA31-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   I,10,26139,2010,white,male,not hispanic or latino,Alive,71,-26139,NA,NA,TCGA-W5-AA31,Normal
+TCGA-CHOL,TCGA-W5-AA31,NA,Cholangiocarcinoma,TCGA-W5-AA31-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,10,26139,2010,white,male,not hispanic or latino,Alive,71,-26139,NA,NA,TCGA-W5-AA31,Tumor
+TCGA-CHOL,TCGA-W5-AA33,NA,Cholangiocarcinoma,TCGA-W5-AA33-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,1449,22090,2011,white,male,not hispanic or latino,Alive,60,-22090,NA,NA,TCGA-W5-AA33,Tumor
+TCGA-CHOL,TCGA-W5-AA34,NA,Cholangiocarcinoma,TCGA-W5-AA34-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,168,27535,2012,white,female,not hispanic or latino,Dead,75,-27535,555,NA,TCGA-W5-AA34,Tumor
+TCGA-CHOL,TCGA-W5-AA34,NA,Cholangiocarcinoma,TCGA-W5-AA34-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   I,168,27535,2012,white,female,not hispanic or latino,Dead,75,-27535,555,NA,TCGA-W5-AA34,Normal
+TCGA-CHOL,TCGA-W5-AA36,NA,Cholangiocarcinoma,TCGA-W5-AA36-01A-11R-A41I-07,Primary Tumor,Primary,Stage   IV,NA,18882,2008,white,female,not hispanic or latino,Dead,51,-18882,1402,2011,TCGA-W5-AA36,Tumor
+TCGA-CHOL,TCGA-W5-AA38,NA,Cholangiocarcinoma,TCGA-W5-AA38-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,1471,20285,2011,white,female,not hispanic or latino,Alive,55,-20285,NA,NA,TCGA-W5-AA38,Tumor
+TCGA-CHOL,TCGA-W5-AA39,NA,Cholangiocarcinoma,TCGA-W5-AA39-01A-11R-A41I-07,Primary Tumor,Primary,Stage   II,NA,29594,2010,white,male,not hispanic or latino,Dead,81,-29594,170,2010,TCGA-W5-AA39,Tumor
+TCGA-CHOL,TCGA-W6-AA0S,NA,Cholangiocarcinoma,TCGA-W6-AA0S-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,808,16951,2013,white,female,hispanic or latino,Alive,46,-16951,NA,NA,TCGA-W6-AA0S,Tumor
+TCGA-CHOL,TCGA-WD-A7RX,NA,Cholangiocarcinoma,TCGA-WD-A7RX-01A-12R-A41I-07,Primary Tumor,Primary,Stage   II,NA,26006,2013,white,female,hispanic or latino,Dead,71,-26006,21,2013,TCGA-WD-A7RX,Tumor
+TCGA-CHOL,TCGA-YR-A95A,NA,Cholangiocarcinoma,TCGA-YR-A95A-01A-12R-A41I-07,Primary Tumor,Primary,Stage   IV,NA,19292,2009,white,male,not reported,Dead,52,-19292,26,2009,TCGA-YR-A95A,Tumor
+TCGA-CHOL,TCGA-ZD-A8I3,NA,Cholangiocarcinoma,TCGA-ZD-A8I3-01A-11R-A41I-07,Primary Tumor,Primary,Stage   II,0,26754,2013,asian,female,not hispanic or latino,Dead,73,-26754,169,NA,TCGA-ZD-A8I3,Tumor
+TCGA-CHOL,TCGA-ZH-A8Y1,NA,Cholangiocarcinoma,TCGA-ZH-A8Y1-01A-11R-A41I-07,Primary Tumor,Primary,Stage   IV,NA,27279,2012,white,female,not hispanic or latino,Dead,74,-27279,385,2013,TCGA-ZH-A8Y1,Tumor
+TCGA-CHOL,TCGA-ZH-A8Y2,NA,Cholangiocarcinoma,TCGA-ZH-A8Y2-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,NA,21743,2011,black or african american,female,not hispanic or latino,Dead,59,-21743,701,2012,TCGA-ZH-A8Y2,Tumor
+TCGA-CHOL,TCGA-ZH-A8Y4,NA,Cholangiocarcinoma,TCGA-ZH-A8Y4-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,NA,21503,2010,white,male,not hispanic or latino,Dead,58,-21503,741,2012,TCGA-ZH-A8Y4,Tumor
+TCGA-CHOL,TCGA-ZH-A8Y5,NA,Cholangiocarcinoma,TCGA-ZH-A8Y5-01A-11R-A41I-07,Primary Tumor,Primary,Stage   IV,1229,25268,2012,white,male,not hispanic or latino,Alive,69,-25268,NA,NA,TCGA-ZH-A8Y5,Tumor
+TCGA-CHOL,TCGA-ZH-A8Y6,NA,Cholangiocarcinoma,TCGA-ZH-A8Y6-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,519,14976,2013,black or african american,female,not hispanic or latino,Alive,41,-14976,NA,NA,TCGA-ZH-A8Y6,Tumor
+TCGA-CHOL,TCGA-ZH-A8Y8,NA,Cholangiocarcinoma,TCGA-ZH-A8Y8-01A-51R-A41I-07,Primary Tumor,Primary,Stage   I,602,26744,2013,white,male,not hispanic or latino,Alive,73,-26744,NA,NA,TCGA-ZH-A8Y8,Tumor
+TCGA-CHOL,TCGA-ZU-A8S4,NA,Cholangiocarcinoma,TCGA-ZU-A8S4-01A-11R-A41I-07,Primary Tumor,Primary,Stage   I,NA,19264,2012,white,male,not hispanic or latino,Dead,52,-19264,98,2012,TCGA-ZU-A8S4,Tumor
+TCGA-CHOL,TCGA-ZU-A8S4,NA,Cholangiocarcinoma,TCGA-ZU-A8S4-11A-11R-A41I-07,Solid Tissue Normal,Not Applicable,Stage   I,NA,19264,2012,white,male,not hispanic or latino,Dead,52,-19264,98,2012,TCGA-ZU-A8S4,Normal

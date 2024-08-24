@@ -1,0 +1,247 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles with background image and text styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(107, 115, 255, 0.7), rgba(0, 13, 255, 0.7)), url('https://i.pinimg.com/564x/59/cf/30/59cf30f231d288cd373ad22d85e64e38.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Container for the upload box */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.Table_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+/* Styling for the upload box */
+.upload-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+    width: 300px;
+}
+
+.first_column{
+    width: 600px
+}
+
+.first_row {
+    width: 800px;
+    height: auto;
+    margin: 20px;
+    background-color: lightblue;
+    text-align: center;
+    
+  }
+
+
+.second_row {
+    width: 800px;
+    height: auto;
+    position:relative;
+    margin: 100px;
+    background-color: lightblue;
+    text-align: center;
+  }
+
+
+/* Logo styling */
+.upload-box .logo {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+/* Heading styling */
+.upload-box h2 {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+/* Form styling */
+.upload-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input group styling */
+.upload-box .input-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Label styling */
+.upload-box label {
+    font-weight: bold;
+}
+
+/* Input styling for text */
+.upload-box input[type="text"], .upload-box input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2);
+    color: #333; /* Adjusted color for better visibility */
+}
+
+/* Input focus styling */
+.upload-box input[type="text"]:focus, .upload-box input[type="email"]:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Button styling */
+.upload-box button {
+    padding: 10px;
+    background: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.upload-box button:hover {
+    background: #45a049;
+}
+
+/* Links styling */
+.upload-box .links {
+    margin-top: 20px;
+}
+
+/* Links hover effect */
+.upload-box .links a {
+    margin-right: 10px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+/* Links hover underline effect */
+.upload-box .links a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sidebar menu styling */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Sidebar menu item styling */
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+/* Sidebar menu link styling */
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Sidebar menu link hover effect */
+.sidebar ul li a:hover {
+    background-color: #555;
+}
+
+.table-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent tables from wrapping */
+    margin-bottom: 20px;
+}
+.table-wrapper {
+    width: 900px; /* Set a fixed width for each table wrapper */
+    margin-right: 0.1px; /* Space between tables */
+}
+.table-wrapper table {
+    width: 100%; /* Make table fill the wrapper */
+    border-collapse: collapse;
+    text-align: center; /* Center align table content */
+}
+.table-wrapper th, .table-wrapper td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+.table-wrapper th {
+    background-color: #f2f2f2;
+}
+.table-title {
+    text-align: center; /* Center align table title */
+    margin-bottom: 10px;
+}
+.table-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.export-button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.export-button:hover {
+    background-color: #45a049;
+}
+
+

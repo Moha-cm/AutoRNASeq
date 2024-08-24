@@ -1,0 +1,7 @@
+"ID","Description","GeneRatio","BgRatio","pvalue","p.adjust","qvalue","geneID","Count","Gene_set_library","Regulation"
+"GO:0097060","synaptic membrane","2/6","428/22568",0.005,0.048,0.022,"RGS9/CRYAB",2,"Cellular Component","Upregulated"
+"GO:0043083","synaptic cleft","1/6","21/22568",0.006,0.048,0.022,"ACHE",1,"Cellular Component","Upregulated"
+"GO:0031430","M band","1/6","23/22568",0.006,0.048,0.022,"CRYAB",1,"Cellular Component","Upregulated"
+"GO:0098992","neuronal dense core vesicle","1/6","26/22568",0.007,0.048,0.022,"NPY",1,"Cellular Component","Upregulated"
+"GO:0031672","A band","1/6","35/22568",0.009,0.048,0.022,"CRYAB",1,"Cellular Component","Upregulated"
+"GO:0031045","dense core granule","1/6","39/22568",0.01,0.048,0.022,"NPY",1,"Cellular Component","Upregulated"

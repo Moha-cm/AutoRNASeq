@@ -1,0 +1,2 @@
+raw_counts: 'uploads/TCGA-CHOL_rawcounts.csv'
+meta_data: 'uploads/condition_df.csv'

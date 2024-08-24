@@ -1,0 +1,2 @@
+"category","subcategory","ID","Description","GeneRatio","BgRatio","pvalue","p.adjust","qvalue","geneID","Count","Gene_set_library","Regulation"
+"Human Diseases","Cancer: overview","hsa05230","Central carbon metabolism in cancer",0.001,0.021,0.017,0.020547688806034,0.0167134310862478,"8140/6513",2,"KEGG Pathways","Upregulated"

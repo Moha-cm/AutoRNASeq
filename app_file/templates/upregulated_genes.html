@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upregulated Genes</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #555;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            height: 100%;
+            overflow-y: auto;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #FDDF95;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="{{ url_for('upload_form') }}">Home</a></li>
+            <li><a href="{{ url_for('scatter_plot') }}">Scatter Plot</a></li>
+            <li><a href="{{ url_for('box_plot') }}">Box Plot</a></li>
+            <li><a href="{{ url_for('volcano_plot') }}">Volcano Plot</a></li>
+            <li><a href="{{ url_for('upregulaetd_genes') }}">Upregulated Genes</a></li>
+            <li><a href="{{ url_for('downregulaetd_genes') }}">Downregulated Genes</a></li>
+            <li><a href="{{ url_for('survival_plot') }}">Survival Plot</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="plot-content">
+            {% if files_uploaded %}
+            <h1>Upregulated Genes</h1>
+            <p> Select a column to perform the DESeq analysis </p>
+            <form method="POST">
+                <label for="color-options">Condition Column</label>
+                <select id="color-options" name="color_options">
+                    {% for option in col_option %}
+                    <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+            <center>
+                
+                {% if condition_data|length > 0 %}
+                <h1>Condition Data</h1>
+                <div class="table-container">
+                    <table id="table0">
+                        <thead>
+                            <tr>
+                                {% for key in condition_data[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in condition_data %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+               
+                {% if Deseq_df|length > 0 %}
+                <h1>Deseq Data</h1>
+                <div class="table-container">
+                    <table id="table1">
+                        <thead>
+                            <tr>
+                                {% for key in Deseq_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in Deseq_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+
+                {% if up_genes_df|length > 0 %}
+                <h1>upregulated_genes</h1>
+                <div class="table-container">
+                    <table id="table11">
+                        <thead>
+                            <tr>
+                                {% for key in up_genes_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in up_genes_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+
+
+
+                
+               
+                {% if molecular_df|length > 0 %}
+                <h1>Molecular Function</h1>
+                <div class="table-container">
+                    <table id="table2">
+                        <thead>
+                            <tr>
+                                {% for key in molecular_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in molecular_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+               
+                {% if cellular_df|length > 0 %}
+                <h1>Cellular Function</h1>
+                <div class="table-container">
+                    <table id="table3">
+                        <thead>
+                            <tr>
+                                {% for key in cellular_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in cellular_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+               
+                {% if biological_df|length > 0 %}
+                <h1>Biological Function</h1>
+                <div class="table-container">
+                    <table id="table4">
+                        <thead>
+                            <tr>
+                                {% for key in biological_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in biological_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+                
+                {% if pathway_df|length > 0 %}
+                <h1>Pathway Enrichment</h1>
+                <div class="table-container">
+                    <table id="table5">
+                        <thead>
+                            <tr>
+                                {% for key in pathway_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in pathway_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+                
+                {% if reactome_df|length > 0 %}
+                <h1>Reactome Pathway</h1>
+                <div class="table-container">
+                    <table id="table6">
+                        <thead>
+                            <tr>
+                                {% for key in reactome_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in reactome_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+                
+                {% if wikipathway_df|length > 0 %}
+                <h1>Wiki Pathway</h1>
+                <div class="table-container">
+                    <table id="table7">
+                        <thead>
+                            <tr>
+                                {% for key in wikipathway_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in wikipathway_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+                
+                {% if disease_df|length > 0 %}
+                <h1>Disease Pathway</h1>
+                <div class="table-container">
+                    <table id="table8">
+                        <thead>
+                            <tr>
+                                {% for key in disease_df[0].keys() %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in disease_df %}
+                            <tr>
+                                {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+            
+            </center>
+            {% else %}
+            <h1>Upregulated Genes</h1>
+            <p>No files uploaded yet. Please upload the necessary files on the Home page.</p>
+            {% endif %}
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const tableIds = [
+                '#table0', '#table1', '#table2', '#table3', 
+                '#table4', '#table5', '#table6', '#table7', 
+                '#table8', '#table9', '#table10','#table11'
+            ];
+            tableIds.forEach(function(tableId) {
+                $(tableId).DataTable({
+                    lengthChange: false,
+                    dom: 'Bfrtip',
+                    buttons: ['copy', 'excel', 'csv']
+                });
+            });
+        });
+    </script>
+</body>
+</html>

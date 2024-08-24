@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Display with Sidebar</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #555;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            height: 100%;
+            overflow-y: auto;
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .table-container {
+            width: 80%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 1px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #FDDF95;
+            height: 7px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #chart {
+            width: 100%;
+            height: 600px; /* Adjust this value to increase the height of the plot */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="{{ url_for('upload_form') }}">Home</a></li>
+            <li><a href="{{ url_for('scatter_plot') }}">Scatter Plot</a></li>
+            <li><a href="{{ url_for('box_plot') }}">Box Plot</a></li>
+            <li><a href="{{ url_for('volcano_plot') }}">Volcano Plot</a></li>
+            <li><a href="{{url_for('upregulaetd_genes')}}">Upregulated Genes</a></li>
+            <li><a href="{{ url_for('downregulaetd_genes') }}">Downregulated Genes</a></li>
+            <li><a href="{{ url_for('survival_plot') }}">Survival Plot</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="plot-content">
+            {% if files_uploaded %}
+            <h1>Box Plot</h1>
+            <form method="POST" action="{{ url_for('box_plot') }}">
+                <label for="plot-x-axis">X-Axis:</label>
+                <select id="plot-x-axis" name="plot_x_axis">
+                    {% for option in col_option %}
+                    <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+                
+                <label for="color-options">Color Options:</label>
+                <select id="color-options" name="color_options">
+                    {% for option in col_option %}
+                    <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+        
+                <label for="gene">Gene Name:</label>
+                <input type="text" id="gene" name="gene" placeholder="Enter Gene Name" required>
+        
+                <button type="submit">Submit</button>
+            </form>
+            <div id='chart' class='chart'></div>
+            <center>
+                <h1>Plot Data </h1>
+                <div class="table-container">
+                    <table id="table1">
+                        <thead>
+                            <tr>
+                                {% for key in raw_counts[0].keys() %}
+                                <th>{{ key.replace("_"," ").upper() }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in raw_counts %}
+                            <tr>
+                                {% for key, value in row.items() %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </center>
+            {% else %}
+            <h1>Box Plot</h1>
+            <form method="POST" action="{{ url_for('box_plot') }}">
+                <label for="plot-x-axis">X-Axis:</label>
+                <select id="plot-x-axis" name="plot_x_axis">
+                    {% for option in col_option %}
+                    <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+                <label for="color-options">Color Options:</label>
+                <select id="color-options" name="color_options">
+                    {% for option in col_option %}
+                    <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+                <label for="gene">Gene Name:</label>
+                <input type="text" id="gene" name="gene" placeholder="Enter Gene Name" required>
+                <button type="submit">Submit</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type='text/javascript'>
+        var graphs = {{graphJSON | safe}};
+        var layout = {
+            width: 1000, // Adjust this value to increase the width of the plot
+            height: 600  // Adjust this value to increase the height of the plot
+        };
+        Plotly.plot('chart', graphs, layout);
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#table1').DataTable({
+                "pageLength": 10,
+                "scrollX": false,
+                "dom": 'Bfrtip',
+                "buttons": [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

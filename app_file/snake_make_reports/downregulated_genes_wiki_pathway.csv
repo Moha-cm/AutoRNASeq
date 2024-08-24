@@ -1,0 +1,8 @@
+"ID","Description","GeneRatio","BgRatio","pvalue","p.adjust","qvalue","geneID","Count","Gene_set_library","Regulation"
+"WP5220","Metabolic reprogramming in pancreatic cancer","2/6","42/8852",0,0.008,0.003,"8140/6513",2,"WikiPathways","Upregulated"
+"WP5390","Pancreatic cancer subtypes","2/6","48/8852",0,0.008,0.003,"6513/9982",2,"WikiPathways","Upregulated"
+"WP2882","Nuclear receptors meta-pathway","3/6","314/8852",0.001,0.011,0.003,"8140/6513/9982",3,"WikiPathways","Upregulated"
+"WP4803","Ciliopathies","2/6","184/8852",0.006,0.049,0.016,"1258/6101",2,"WikiPathways","Upregulated"
+"WP4629","Aerobic glycolysis","1/6","12/8852",0.008,0.049,0.016,"6513",1,"WikiPathways","Upregulated"
+"WP4628","Aerobic glycolysis - augmented","1/6","13/8852",0.009,0.049,0.016,"6513",1,"WikiPathways","Upregulated"
+"WP5314","Lactate shuttle in glial cells","1/6","13/8852",0.009,0.049,0.016,"6513",1,"WikiPathways","Upregulated"

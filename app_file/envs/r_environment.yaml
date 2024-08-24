@@ -1,0 +1,35 @@
+name: r_new
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - r-base
+  - r-dplyr ==1.1.4
+  - r-BiocManager ==1.30.23
+  - r-kableExtra ==1.4.0
+  - r-htmltools ==0.5.8.1
+  - r-DT ==0.33
+  - r-stringr ==1.5.1
+  - r-dendextend ==1.17.1
+  - r-ggplot2 ==3.5.1
+  - r-plotly ==4.10.4
+  - r-pheatmap ==1.0.12
+  - r-heatmaply ==1.5.0
+  - r-enrichR ==3.2
+  - r-openxlsx ==4.2.5.2
+  - r-wesanderson ==0.3.7
+  - r-rstatix ==0.7.2
+  - r-ggpubr ==0.6.0
+  - r-survminer ==0.4.9
+  - r-survival ==3.5-7
+  - bioconductor-deseq2
+  - bioconductor-clusterprofiler
+  - bioconductor-dose
+  - bioconductor-reactomepa
+  - bioconductor-pathview
+  - bioconductor-org.hs.eg.db
+
+
+
+
